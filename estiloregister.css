@@ -1,0 +1,76 @@
+/* Estilos gerais */
+body {
+    background-color: #ffffff;
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Estilos do contêiner de login */
+.register-container {
+    background-color: #000000;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    width: 300px;
+    text-align: center;
+}
+
+/* Estilo do título */
+.register-container h2 {
+    margin-bottom: 20px;
+    color: rgb(107, 236, 20); /* Dourado */
+}
+
+/* Estilos do grupo de input */
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.input-group input {
+    width: 95%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(107, 236, 20)55;
+    color: rgb(107, 236, 20);
+}
+
+/* Estilo do botão */
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(107, 236, 20); /* Dourado */
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff0101;
+}
+
+/* Estilo do link de cadastro */
+p a {
+    color: rgb(107, 236, 20);
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
