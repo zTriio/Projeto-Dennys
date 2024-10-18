@@ -1,13 +1,15 @@
 <?php 
 session_start();
+
+$servername = "";
+$bancousuario = "";
+$bancosenha = "";
+$nomebanco = "";
+
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $username = $_POST['username'];
         $password = $_POST['password'];
         $email = $_POST['email'];
-        $servername = "";
-        $bancousuario = "";
-        $bancosenha = "";
-        $nomebanco = "";
 
         $conn = new mysqli($servername, $usuario, $bancosenha, $nomebanco);
 
