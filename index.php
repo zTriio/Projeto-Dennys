@@ -1,8 +1,8 @@
 <?php session_start();
-    if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true){
-        header('location: login.php');
-        exit();
-    }
+    //if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true){
+       // header('location: login.php');
+        //exit();
+   // }
 ?>
 
 <!DOCTYPE html>
@@ -17,11 +17,12 @@
     <header>
         <nav>
             <ul class="menu">
-                <li><a href="">Início</a></li>
-                <li><a href="">Sobre</a></li>
-                <li><a href="">Pets</a></li>
-                <li><a href="">Contato</a></li>
+                <li><a href="index.php">Início</a></li>
+                <li><a href="sobre.php">Sobre</a></li>
+                <li><a href="pets.php">Pets</a></li>
+                <li><a href="contato.php">Contato</a></li>
                 <li><a href="login.php">Login</a></li>
+                <li><a href="logout.php">Sair</a></li>
             </ul>
         </nav>
     </header>

@@ -1,13 +1,3 @@
-<?php 
-session_start();
-    if($_SERVER['REQUEST_METHOD'] == 'POST'){
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-
-        //criar sistema para verificar informaçoes no banco de dados
-
-    };
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -19,7 +9,7 @@ session_start();
 <body>
     <div class="login-container">
         <h2>Login</h2>
-        <form action="login.php" method="post">
+        <form action="processarlogin.php" method="post">
             <div class="input-group">
                 <label for="username">Usuário</label>
                 <input type="text" id="username" name="username" required>

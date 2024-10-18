@@ -9,7 +9,7 @@
 <body>
     <div class="register-container">
         <h2>Registre-se</h2>
-        <form action="register.php" method="post"> 
+        <form action="processarregister.php" method="post"> 
             <div class="input-group">
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" required>
