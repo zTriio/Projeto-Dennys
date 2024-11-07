@@ -1,5 +1,22 @@
+<?php
+require 'classes/Database.php';
+require 'classes/Usuario.php';
+
+$db = (new Database())->getConnection();
+$usuario = new Usuario($db);
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    try {
+        $usuario->registrar($_POST['username'], $_POST['password']);
+        echo "Usuário registrado com sucesso!";
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    }
+}
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +26,7 @@
 <body>
     <div class="register-container">
         <h2>Registre-se</h2>
-        <form action="processarregister.php" method="post"> 
+        <form action="register.php" method="POST"> 
             <div class="input-group">
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" required>
