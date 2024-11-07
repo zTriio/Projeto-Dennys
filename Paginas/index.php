@@ -1,5 +1,5 @@
 <?php 
-   require 'auth.php';
+   require 'Verificaçao de logado/auth.php';
 ?>
 
 <!DOCTYPE html>
