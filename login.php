@@ -1,6 +1,6 @@
 <?php
-require 'Classes/Database.php';
-require 'Classes/Usuario.php';
+require 'Database.php';
+require 'Usuario.php';
 
 $db = (new Database())->getConnection();
 $usuario = new Usuario($db);

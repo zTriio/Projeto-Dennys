@@ -1,13 +1,13 @@
 <?php
-require 'Classes/Database.php';
-require 'Classes/Usuario.php';
+require 'DataBase.php';
+require 'Usuario.php';
 
 $db = (new Database())->getConnection();
 $usuario = new Usuario($db);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
-        $usuario->registrar($_POST['username'], $_POST['password']);
+        $usuario->registrar($_POST['username'], $_POST['password'], $_POST['email']);
         echo "Usuário registrado com sucesso!";
     } catch (Exception $e) {
         echo $e->getMessage();

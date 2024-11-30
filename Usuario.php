@@ -7,16 +7,16 @@ class Usuario {
         $this->conn = $db;
     }
 
-    public function registrar($usuario, $senha) {
+    public function registrar($usuario, $senha, $email) {
         if (strlen($senha) < 6) {
             throw new Exception("A senha deve ter pelo menos 6 caracteres.");
         }
 
-        $senhaCriptografada = password_hash($senha, PASSWORD_DEFAULT);
+        $criptografada = hash('sha256',$senha);
 
-        $sql = "INSERT INTO usuarios (usuario, senha) VALUES (?, ?)";
+        $sql = "INSERT INTO usuarios (usuario, senha, email) VALUES (?, ?, ?)";
         $stmt = $this->conn->prepare($sql);
-        $stmt->bind_param("ss", $usuario, $senhaCriptografada);
+        $stmt->bind_param("sss", $usuario, $criptografada, $email);
         
         return $stmt->execute();
     }
@@ -27,12 +27,12 @@ class Usuario {
         $stmt->bind_param("s", $usuario);
         $stmt->execute();
         $stmt->store_result();
-
+        $senhahash = null;
         if ($stmt->num_rows == 1) {
-            $stmt->bind_result($senhaCriptografada);
+            $stmt->bind_result($senhahash);
             $stmt->fetch();
 
-            if (password_verify($senha, $senhaCriptografada)) {
+            if (hash('sha256',$senha) === $senhahash) {
                 session_start();
                 $_SESSION['loggedin'] = true;
                 $_SESSION['usuario'] = $usuario;

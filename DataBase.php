@@ -6,8 +6,8 @@ class Database {
     public function __construct() {
         $servername = "localhost";
         $username = "root";
-        $password = "";
-        $dbname = "meu_banco";
+        $password = "Geni9137";
+        $dbname = "projeto_one";
 
         $this->conn = new mysqli($servername, $username, $password, $dbname);
 

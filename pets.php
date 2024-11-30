@@ -5,8 +5,8 @@ if (!isset($_SESSION['loggedin'])) {
     exit;
 }
 
-require 'classes/Database.php';
-require 'classes/Pet.php';
+require 'DataBase.php';
+require 'Pet.php';
 
 $db = (new Database())->getConnection();
 $pet = new Pet($db);
